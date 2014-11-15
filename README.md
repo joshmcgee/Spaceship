@@ -1,4 +1,6 @@
-Bloom
-=====
 
-Flower game for Bangarang.
+Spaceship
+=========
+
+A 4X space game in 2D.
+
