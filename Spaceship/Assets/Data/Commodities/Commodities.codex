@@ -1,0 +1,36 @@
+
+# Testing commodity loading.
+
+{
+	internalName: [_SpaceBurger]
+	displayName: [Space Burger]
+	pluralName: [Space Burgers]
+	description: [A healthy meal of protein and vegitables.]
+	category: [FOOD][MEAL]
+	metaLevel: [2]
+	mass: [0.8]
+	volume: [0.1]
+	baseCost: [3.5]
+}
+{
+	internalName: [_SpaceMeat]
+	displayName: [Space Meat]
+	pluralName: [Space Meat]
+	description: [A rubbery substance used to provide protein. Was historically served in high school caffeterias, presumably as a form of punishment.]
+	category: [FOOD]
+	metaLevel: [1]
+	mass: [0.5]
+	volume: [0.1]
+	baseCost: [1.5]
+}
+{
+	internalName: [_SpaceVeggies]
+	displayName: [Space Veggies]
+	pluralName: [Space Veggies]
+	description: [...where do they even grow this stuff?]
+	category: [FOOD]
+	metaLevel: [1]
+	mass: [0.3]
+	volume: [0.1]
+	baseCost: [1]
+}
