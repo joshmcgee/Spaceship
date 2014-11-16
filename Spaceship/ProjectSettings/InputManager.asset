@@ -58,8 +58,8 @@ InputManager:
     descriptiveNegativeName: CCW Rotational Thrusters
     negativeButton: d
     positiveButton: a
-    altNegativeButton: '[7]'
-    altPositiveButton: '[9]'
+    altNegativeButton: '[9]'
+    altPositiveButton: '[7]'
     gravity: 100
     dead: .00100000005
     sensitivity: 100
@@ -91,7 +91,7 @@ InputManager:
     negativeButton: 
     positiveButton: f
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: '[5]'
     gravity: 100
     dead: .00100000005
     sensitivity: 1

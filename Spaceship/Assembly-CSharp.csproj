@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\ShipNavigationController.cs" />
      <Compile Include="Assets\Scripts\ThrusterController.cs" />
      <Compile Include="Assets\Ships\Craft.cs" />
+     <Compile Include="Assets\Sway2D.cs" />
      <Compile Include="Assets\UI\Directional Markers\DirectionalMarker.cs" />
      <Compile Include="Assets\UI\Directional Markers\Heading Marker\HeadingMarker.cs" />
   </ItemGroup>

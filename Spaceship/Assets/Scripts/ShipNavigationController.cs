@@ -13,7 +13,7 @@ public class ShipNavigationController : MonoBehaviour {
 	public float dampenerTranslationThreshold;
 	public float dampenerRotationThreshold;
 
-	Vector3 currentThrust;
+	private Vector3 currentThrust;
 	private Vector3 localVelocity;
 	
 
@@ -26,9 +26,6 @@ public class ShipNavigationController : MonoBehaviour {
 
 	void FixedUpdate () {
 		ApplyCurrentThrust();
-		
-		//localVelocity = transform.InverseTransformDirection(rigidbody2D.velocity);
-		//Debug.Log("localVelocity => " + localVelocity + "\nrigidVelocity => " + rigidbody2D.velocity);
 	}
 
 	void GetInput () {
@@ -151,9 +148,6 @@ public class ShipNavigationController : MonoBehaviour {
 	}
 
 	void ApplyRotationalDampeners () {
-
-		//Debug.Log("angularVelocity => " + rigidbody2D.angularVelocity);
-
 		if (rigidbody2D.angularVelocity > 0) {
 			if (rigidbody2D.angularVelocity > dampenerRotationThreshold) {
 				currentThrust.z -= maxRotationalThrust * Time.deltaTime;
