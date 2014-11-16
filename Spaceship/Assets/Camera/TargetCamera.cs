@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerCamera : MonoBehaviour {
+public class TargetCamera : MonoBehaviour {
 
 	public Transform target;
 
@@ -20,7 +20,7 @@ public class PlayerCamera : MonoBehaviour {
 
 	void Update () {
 		//camera.orthographicSize += inpu
-		camera.orthographicSize -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+		camera.orthographicSize -= Input.GetAxis("Mouse Scrollwheel") * zoomSpeed;
 		if (camera.orthographicSize < minZoom) {
 			camera.orthographicSize = minZoom;
 		}

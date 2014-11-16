@@ -30,7 +30,7 @@ public class HeadingMarker : DirectionalMarker {
 	}
 
 	new protected void Init () {
-		shipRigidbody = transform.parent.rigidbody2D;
+		shipRigidbody = transform.rigidbody2D;
 		base.Init();
 	}
 
