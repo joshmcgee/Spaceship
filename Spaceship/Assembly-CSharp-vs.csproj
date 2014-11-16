@@ -77,8 +77,8 @@
      <Compile Include="Assets\Scripts\Class Scripts\WarpCore.cs" />
      <Compile Include="Assets\Scripts\Class Scripts\Weapon.cs" />
      <Compile Include="Assets\Scripts\ReactionController.cs" />
-     <Compile Include="Assets\Scripts\ShipController.cs" />
-     <Compile Include="Assets\ShipInputController.cs" />
+     <Compile Include="Assets\Scripts\ShipNavigationController.cs" />
+     <Compile Include="Assets\Scripts\ThrusterController.cs" />
      <Compile Include="Assets\Ships\Craft.cs" />
      <Compile Include="Assets\UI\Directional Markers\DirectionalMarker.cs" />
      <Compile Include="Assets\UI\Directional Markers\Heading Marker\HeadingMarker.cs" />

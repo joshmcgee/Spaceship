@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShipController : MonoBehaviour {
+public class ThrusterController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
