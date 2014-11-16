@@ -86,7 +86,7 @@ GameObject:
   - 114: {fileID: 69606722}
   - 60: {fileID: 69606723}
   m_Layer: 9
-  m_Name: Sprite
+  m_Name: Hull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: .287, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1291049212}
   m_Father: {fileID: 552535052}
   m_RootOrder: 0
 --- !u!114 &69606722
@@ -213,7 +214,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 69606721}
-  - {fileID: 1291049212}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!50 &552535053
@@ -598,13 +598,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1291049210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.274142385, z: 0}
+  m_LocalPosition: {x: 0, y: -.561142385, z: 0}
   m_LocalScale: {x: .0925781205, y: .422812432, z: 1}
   m_Children:
   - {fileID: 596478093}
   - {fileID: 1875652935}
-  m_Father: {fileID: 552535052}
-  m_RootOrder: 1
+  m_Father: {fileID: 69606721}
+  m_RootOrder: 0
 --- !u!1 &1390873282
 GameObject:
   m_ObjectHideFlags: 0
