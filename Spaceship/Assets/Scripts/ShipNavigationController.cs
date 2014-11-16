@@ -14,6 +14,7 @@ public class ShipNavigationController : MonoBehaviour {
 	public float dampenerRotationThreshold;
 
 	Vector3 currentThrust;
+	private Vector3 localVelocity;
 	
 
 	// Update is called once per frame
@@ -25,8 +26,9 @@ public class ShipNavigationController : MonoBehaviour {
 
 	void FixedUpdate () {
 		ApplyCurrentThrust();
-
-		Debug.Log("currentThrust => " + currentThrust);
+		
+		//localVelocity = transform.InverseTransformDirection(rigidbody2D.velocity);
+		//Debug.Log("localVelocity => " + localVelocity + "\nrigidVelocity => " + rigidbody2D.velocity);
 	}
 
 	void GetInput () {
@@ -99,48 +101,50 @@ public class ShipNavigationController : MonoBehaviour {
 	//--------------------
 
 	void ApplyDampeners () {
+		localVelocity = transform.InverseTransformDirection(rigidbody2D.velocity);
+
 		ApplyLongitudinalDampeners();
 		ApplyLateralDampeners();
 		ApplyRotationalDampeners();
 	}
 
 	void ApplyLongitudinalDampeners () {
-		if (rigidbody2D.velocity.y > 0) {
-			if (rigidbody2D.velocity.y > dampenerTranslationThreshold) {
+		if (localVelocity.y > 0) {
+			if (localVelocity.y > dampenerTranslationThreshold) {
 				currentThrust.y -= maxLongitudinalThrust * Time.deltaTime;
 			}
 			else {
-				float dampenerThrottle = (rigidbody2D.velocity.y / dampenerTranslationThreshold) * maxLongitudinalThrust;
+				float dampenerThrottle = (localVelocity.y / dampenerTranslationThreshold) * maxLongitudinalThrust;
 				currentThrust.y -= dampenerThrottle * Time.deltaTime;
 			}
 		}
-		else if (rigidbody2D.velocity.y < 0) {
-			if (rigidbody2D.velocity.y < -dampenerTranslationThreshold) {
+		else if (localVelocity.y < 0) {
+			if (localVelocity.y < -dampenerTranslationThreshold) {
 				currentThrust.y += maxLongitudinalThrust * Time.deltaTime;
 			}
 			else {
-				float dampenerThrottle = (-rigidbody2D.velocity.y / dampenerTranslationThreshold) * maxLongitudinalThrust;
+				float dampenerThrottle = (-localVelocity.y / dampenerTranslationThreshold) * maxLongitudinalThrust;
 				currentThrust.y += dampenerThrottle * Time.deltaTime;
 			}
 		}
 	}
 
 	void ApplyLateralDampeners () {
-		if (rigidbody2D.velocity.x > 0) {
-			if (rigidbody2D.velocity.x > dampenerTranslationThreshold) {
+		if (localVelocity.x > 0) {
+			if (localVelocity.x > dampenerTranslationThreshold) {
 				currentThrust.x -= maxLateralThrust * Time.deltaTime;
 			}
 			else {
-				float dampenerThrottle = (rigidbody2D.velocity.x / dampenerTranslationThreshold) * maxLateralThrust;
+				float dampenerThrottle = (localVelocity.x / dampenerTranslationThreshold) * maxLateralThrust;
 				currentThrust.x -= dampenerThrottle * Time.deltaTime;
 			}
 		}
-		else if (rigidbody2D.velocity.x < 0) {
-			if (rigidbody2D.velocity.x < -dampenerTranslationThreshold) {
-				currentThrust.y += maxLateralThrust * Time.deltaTime;
+		else if (localVelocity.x < 0) {
+			if (localVelocity.x < -dampenerTranslationThreshold) {
+				currentThrust.x += maxLateralThrust * Time.deltaTime;
 			}
 			else {
-				float dampenerThrottle = (-rigidbody2D.velocity.x / dampenerTranslationThreshold) * maxLateralThrust;
+				float dampenerThrottle = (-localVelocity.x / dampenerTranslationThreshold) * maxLateralThrust;
 				currentThrust.x += dampenerThrottle * Time.deltaTime;
 			}
 		}
@@ -148,7 +152,7 @@ public class ShipNavigationController : MonoBehaviour {
 
 	void ApplyRotationalDampeners () {
 
-		Debug.Log("angularVelocity => " + rigidbody2D.angularVelocity);
+		//Debug.Log("angularVelocity => " + rigidbody2D.angularVelocity);
 
 		if (rigidbody2D.angularVelocity > 0) {
 			if (rigidbody2D.angularVelocity > dampenerRotationThreshold) {

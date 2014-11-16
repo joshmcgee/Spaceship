@@ -230,7 +230,7 @@ MonoBehaviour:
   maxLateralThrust: 150
   maxRotationalThrust: 50
   dampenerTranslationThreshold: 1
-  dampenerRotationThreshold: 4
+  dampenerRotationThreshold: 30
 --- !u!1 &749571178
 GameObject:
   m_ObjectHideFlags: 0
