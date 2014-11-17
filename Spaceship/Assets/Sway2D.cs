@@ -18,25 +18,44 @@ public class Sway2D : MonoBehaviour {
 	private float offsetRotation;
 	private float originRotation;
 
+	public float updateRate;
+	private float updateDelay;
+
 
 	void Start () {
+
+		// Save the original position and rotation.
 		originPosition = transform.localPosition;
 		originRotation = transform.localRotation.eulerAngles.z;
+
+		// Calculate how often to update.
+		if (updateRate > 0f) {
+			updateDelay = 1f/updateRate;
+		}
+		else {
+			updateDelay = 0f;
+		}
+
+		// Begin!
+		StartCoroutine("SwayUpdate");
 	}
 
-	// Update is called once per frame
-	void Update () {
+	IEnumerator SwayUpdate () {
 
-		// Translation Sway.
-		offsetPosition.x = Mathf.Sin(Time.time * xFrequency) * xAmplitude;
-		offsetPosition.y = Mathf.Cos(Time.time * yFrequency) * yAmplitude;
+		while (true) {
+			// Translation Sway.
+			offsetPosition.x = Mathf.Sin(Time.time * xFrequency) * xAmplitude;
+			offsetPosition.y = Mathf.Cos(Time.time * yFrequency) * yAmplitude;
+			
+			transform.localPosition = originPosition + offsetPosition;
+			
+			
+			// Rotation Sway.
+			offsetRotation = Mathf.Sin(Time.time * rFrequency) * rAmplitude;
+			offsetRotation += originRotation;
+			transform.localRotation = Quaternion.Euler(0, 0, originRotation + offsetRotation);
 
-		transform.localPosition = originPosition + offsetPosition;
-
-
-		// Rotation Sway.
-		offsetRotation = Mathf.Sin(Time.time * rFrequency) * rAmplitude;
-		offsetRotation += originRotation;
-		transform.localRotation = Quaternion.Euler(0, 0, originRotation + offsetRotation);
+			yield return new WaitForSeconds(updateDelay);
+		}
 	}
 }
