@@ -195,6 +195,9 @@ GameObject:
   - 60: {fileID: 552535054}
   - 50: {fileID: 552535053}
   - 114: {fileID: 552535055}
+  - 58: {fileID: 552535058}
+  - 58: {fileID: 552535057}
+  - 58: {fileID: 552535056}
   m_Layer: 8
   m_Name: Interceptor
   m_TagString: Untagged
@@ -291,6 +294,39 @@ MonoBehaviour:
   maxRotationalThrust: 50
   dampenerTranslationThreshold: 1
   dampenerRotationThreshold: 30
+--- !u!58 &552535056
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 552535051}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .309580386
+  m_Center: {x: -.589999974, y: -.0700000003}
+--- !u!58 &552535057
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 552535051}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .309580386
+  m_Center: {x: .589999974, y: -.0700000003}
+--- !u!58 &552535058
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 552535051}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .631534874
+  m_Center: {x: 0, y: .349999994}
 --- !u!1 &596478092
 GameObject:
   m_ObjectHideFlags: 0
