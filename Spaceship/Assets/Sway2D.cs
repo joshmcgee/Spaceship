@@ -13,26 +13,30 @@ public class Sway2D : MonoBehaviour {
 	public float rAmplitude;
 
 	private Vector3 offsetPosition;
-	private Vector3 originalPosition;
+	private Vector3 originPosition;
 
-	private Quaternion offsetRotation;
-	private Quaternion originalRotation;
+	private float offsetRotation;
+	private float originRotation;
 
 
 	void Start () {
-		originalPosition = transform.localPosition;
-		originalRotation = transform.localRotation;
+		originPosition = transform.localPosition;
+		originRotation = transform.localRotation.eulerAngles.z;
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+		// Translation Sway.
 		offsetPosition.x = Mathf.Sin(Time.time * xFrequency) * xAmplitude;
 		offsetPosition.y = Mathf.Cos(Time.time * yFrequency) * yAmplitude;
 
-		transform.localPosition = originalPosition + offsetPosition;
+		transform.localPosition = originPosition + offsetPosition;
 
-		offsetRotation = Quaternion.Euler(0f, 0f, Mathf.Sin(Time.time * rFrequency) * rAmplitude);
-		transform.localRotation = offsetRotation;
 
+		// Rotation Sway.
+		offsetRotation = Mathf.Sin(Time.time * rFrequency) * rAmplitude;
+		offsetRotation += originRotation;
+		transform.localRotation = Quaternion.Euler(0, 0, originRotation + offsetRotation);
 	}
 }

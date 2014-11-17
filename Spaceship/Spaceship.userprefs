@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ThrusterController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Sway2D.cs">
     <Files>
-      <File FileName="Assets\Scripts\ShipNavigationController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ThrusterController.cs" Line="13" Column="30" />
+      <File FileName="Assets/Sway2D.cs" Line="23" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
