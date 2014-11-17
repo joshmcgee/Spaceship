@@ -4,6 +4,8 @@
 TagManager:
   tags:
   - Local Player
+  - Remote Player
+  - Asteroid
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -13,13 +15,13 @@ TagManager:
   Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: Space Object
-  User Layer 9: Physics Sprite
-  User Layer 10: Bullet
-  User Layer 11: Missile
-  User Layer 12: 
-  User Layer 13: 
-  User Layer 14: 
+  User Layer 8: Bullet
+  User Layer 9: Missile
+  User Layer 10: Detail Object
+  User Layer 11: Small Object
+  User Layer 12: Medium Object
+  User Layer 13: Large Object
+  User Layer 14: Huge Object
   User Layer 15: 
   User Layer 16: 
   User Layer 17: 
